@@ -3,14 +3,6 @@
   <html lang="en">
   <body>
   <script src="https://unpkg.com/gojs@2.3.11/release/go.js"></script>
-  <p>
-    This is a minimalist HTML and JavaScript skeleton of the GoJS Sample
-    <a href="https://gojs.net/latest/samples/dataFlow.html">dataFlow.html</a>. It was automatically generated from a button on the sample page,
-    and does not contain the full HTML. It is intended as a starting point to adapt for your own usage.
-    For many samples, you may need to inspect the
-    <a href="https://github.com/NorthwoodsSoftware/GoJS/blob/master/samples/dataFlow.html">full source on Github</a>
-    and copy other files or scripts.
-  </p>
   <div id="allSampleContent" class="p-4 w-full">
     <script id="code">
     function init() {
@@ -81,7 +73,7 @@
         var node = $(go.Node, "Spot",
           $(go.Panel, "Auto",
             { width: 100, height: 120 },
-            $(go.Shape, "Rectangle",
+            $(go.Shape, "Square",
               {
                 fill: background, stroke: null, strokeWidth: 0,
                 spot1: go.Spot.TopLeft, spot2: go.Spot.BottomRight
@@ -179,26 +171,6 @@
 
 <div id="sample">
   <div id="myDiagramDiv" style="border: 1px solid black; width: 100%; height: 600px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0);"><canvas tabindex="0" width="1054" height="581" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 1054px; height: 581px;"></canvas><div style="position: absolute; overflow: auto; width: 1054px; height: 598px; z-index: 1;"><div style="position: absolute; width: 1575px; height: 1px;"></div></div></div>
-  <p>
-    This sample demonstrates a data flow or workflow graph with labeled ports on nodes.
-    A real application would provide the ability to edit the details (properties) of each node
-    so that the actual database operation could be executed.
-  </p>
-  <p>
-    The ports of each node are set up as panels, created within the <b>makePort</b> function.
-    This function sets various properties of the <a href="../api/symbols/Shape.html" target="api">Shape</a> and
-    <a href="../api/symbols/TextBlock.html" target="api">TextBlock</a> that make up the panel, and properties of the panel itself. Most notable are
-    <a href="../api/symbols/GraphObject.html#portId" target="api">GraphObject.portId</a> to declare the shape as a port, and <a href="../api/symbols/GraphObject.html#fromLinkable" target="api">GraphObject.fromLinkable</a> and
-    <a href="../api/symbols/GraphObject.html#toLinkable" target="api">GraphObject.toLinkable</a> to set the way the ports can be linked.
-  </p>
-  <p>
-    The diagram also uses the <b>makeTemplate</b> function to create the node templates with shared features.
-    This function takes a type, an image, a background color, and arrays of ports to create the node
-    to be added to the <a href="../api/symbols/Diagram.html#nodeTemplateMap" target="api">Diagram.nodeTemplateMap</a>.
-  </p>
-  <p>
-    For the same data model rendered somewhat differently, see the <a href="dataFlowVertical.html">Data Flow (vertical)</a> sample.
-  </p>
   <div>
     <div>
       <button id="SaveButton" onclick="save()" disabled="">Save</button>
@@ -245,7 +217,5 @@
   ]}
     </textarea>
   </div>
-<p class="text-xs">GoJS version 2.3.11. Copyright 1998-2023 by Northwoods Software.</p></div>
-    <p><a href="https://github.com/NorthwoodsSoftware/GoJS/blob/master/samples/dataFlow.html" target="_blank">View this sample page's source on GitHub</a></p></div>
   </body>
   </html>
