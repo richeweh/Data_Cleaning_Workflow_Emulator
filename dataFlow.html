@@ -72,11 +72,15 @@
       function makeTemplate(typename, icon, background, inports, outports) {
         var node = $(go.Node, "Spot",
           $(go.Panel, "Auto",
-            { width: 100, height: 120 },
-            $(go.Shape, "Square",
+            { width: 100, height: 100 },
+            $(go.Shape, "RoundedRectangle",
               {
-                fill: background, stroke: null, strokeWidth: 0,
-                spot1: go.Spot.TopLeft, spot2: go.Spot.BottomRight
+                fill: background, 
+                stroke: null, 
+                spot1: go.Spot.TopLeft, 
+                spot2: go.Spot.BottomRight,
+                strokeWidth: 0,
+                parameter1: 5,
               }),
             $(go.Panel, "Table",
               $(go.TextBlock, typename,
@@ -88,7 +92,7 @@
                   font: "bold 12pt sans-serif"
                 }),
               $(go.Picture, icon,
-                { row: 1, width: 16, height: 16, scale: 3.0 }),
+                { row: 1, width: 8, height: 8, scale: 3}),
               $(go.TextBlock,
                 {
                   row: 2,
@@ -117,7 +121,7 @@
         myDiagram.nodeTemplateMap.set(typename, node);
       }
 
-      makeTemplate("Table", "images/table.svg", "forestgreen",
+      makeTemplate("Table", "images/excel-reader.png", "#Ff7800",
         [],
         [makePort("OUT", false)]);
 
